@@ -56,11 +56,17 @@ def cardinal(n, threshold=None):
             a = cardinal(q) if q > 1 else ""
             return a + "honderd"
 
-    if n < 1000000:
+    if n < 10 ** 6:
         q, r = divmod(n, 1000)
         a = cardinal(q) if q > 1 else ""
         b = " " + cardinal(r) if r > 0 else ""
         return a + "duizend" + b
+
+    if n < 10 ** 9:
+        q, r = divmod(n, 10 ** 6)
+        a = cardinal(q)
+        b = " " + cardinal(r) if r > 0 else ""
+        return a + " miljoen" + b
 
     # Fallback to numerical representation
     return cardinal(n, threshold=0)

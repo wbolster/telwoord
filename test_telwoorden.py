@@ -14,6 +14,8 @@ def test_cardinal():
         11: "elf",
         19: "negentien",
         20: "twintig",
+        23: "eenentwintig",
+        23: "drieëntwintig",
         100: "honderd",
         200: "tweehonderd",
         999: "negenhonderdnegenennegentig",
@@ -22,6 +24,11 @@ def test_cardinal():
         99900: "negenennegentigduizend negenhonderd",
         99999: "negenennegentigduizend negenhonderdnegenennegentig",
         220000: "tweehonderdtwintigduizend",
+        1000000: "een miljoen",
+        1000012: "een miljoen twaalf",
+        2000000: "twee miljoen",
+        300000000: "driehonderd miljoen",
+        300012013: "driehonderd miljoen twaalfduizend dertien",
 
         # From http://woordenlijst.org/leidraad/6/9/
         2: "twee",
