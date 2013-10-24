@@ -48,12 +48,22 @@ def cardinal(n, threshold=None):
         b = cardinal(r) if r > 0 else ""
         return a + "honderd" + b
 
-    if n < 10000:
+    if 1000 < n < 10000:
+        # Special case for numbers that are exactly divisble by 100,
+        # e.g. "tweeëntwintighonderd"
         q, r = divmod(n, 100)
         if r == 0:
-            # exactly divisble by 100, e.g. "tweeëntwintighonderd"
             a = cardinal(q) if q > 1 else ""
             return a + "honderd"
+
+    if n < 100000:
+        q, r = divmod(n, 1000)
+        a = cardinal(q) if q > 1 else ""
+        b = cardinal(r) if r > 0 else ""
+        if b:
+            return a + "duizend " + b
+        else:
+            return a + "duizend"
 
     # Fallback to numerical representation
     return cardinal(n, threshold=0)
