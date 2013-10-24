@@ -54,6 +54,3 @@ def ordinal(n):
 
 hoofd = n = cardinal
 rang = nth = ordinal
-
-
-# TODO: breuken?
