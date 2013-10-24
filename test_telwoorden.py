@@ -34,6 +34,9 @@ def test_cardinal():
         1000000000: "een miljard",
         12345678901: "twaalf miljard driehonderdvijfenveertig miljoen "
                      "zeshonderdachtenzeventigduizend negenhonderdeen",
+        1000000000000: "een biljoen",
+        13000000500003: "dertien biljoen vijfhonderdduizend drie",
+
 
         # From http://woordenlijst.org/leidraad/6/9/
         2: "twee",
