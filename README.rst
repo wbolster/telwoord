@@ -3,9 +3,6 @@ Telwoord
 
 A Python library to convert numbers into their Dutch (nl) written form.
 
-Note: this is a work in progress and should be considered alpha quality
-software!
-
 
 Installation
 ============
