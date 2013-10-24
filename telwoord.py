@@ -56,7 +56,7 @@ def cardinal(n, threshold=None):
             a = cardinal(q) if q > 1 else ""
             return a + "honderd"
 
-    if n < 100000:
+    if n < 1000000:
         q, r = divmod(n, 1000)
         a = cardinal(q) if q > 1 else ""
         b = cardinal(r) if r > 0 else ""

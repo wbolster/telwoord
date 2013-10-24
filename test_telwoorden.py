@@ -19,7 +19,9 @@ def test_cardinal():
         999: "negenhonderdnegenennegentig",
         1000: "duizend",
         12001: "twaalfduizend een",
+        99900: "negenennegentigduizend negenhonderd",
         99999: "negenennegentigduizend negenhonderdnegenennegentig",
+        220000: "tweehonderdtwintigduizend",
 
         # From http://woordenlijst.org/leidraad/6/9/
         2: "twee",
