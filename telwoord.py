@@ -49,7 +49,8 @@ def cardinal(n, threshold=None):
         b = cardinal(r) if r > 0 else ""
         return a + "honderd" + b
 
-    raise NotImplementedError("Don't know how to convert %d" % n)
+    # Fallback to numerical representation
+    return cardinal(n, threshold=0)
 
 
 def ordinal(n):
