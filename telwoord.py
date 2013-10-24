@@ -6,6 +6,8 @@ Convert numbers into their Dutch written form.
 
 from __future__ import unicode_literals
 
+__all__ = ['cardinal']
+
 try:
     unicode
 except NameError:
@@ -26,15 +28,16 @@ BILLION = 10 ** 9
 
 
 def cardinal(n, friendly=True):
+    """Convert a number into its Dutch written form.
 
-    # Use various heuristics for "friendly" results by default.
+    If `friendly` is `True` (the default), this function uses various
+    heuristics for "human friendly" results.
 
+    If `friendly` is `False`, the number is always spelled out in full,
+    which will result in not so readable results for many larger
+    numbers.
+    """
     if friendly:
-    # getallen tot twintig: twee, negen, zeventien, achtste;
-    # tientallen tot honderd: twintig, vijftig, tachtigste;
-    # honderdtallen tot duizend: driehonderd, negenhonderd;
-    # duizendtallen tot twaalfduizend: zesduizend, tienduizendste;
-    # de woorden miljoen, miljard, biljoen, enz.: vier miljoen
         if n < 20:
             return cardinal(n, friendly=False)
 
@@ -57,6 +60,7 @@ def cardinal(n, friendly=True):
             if r == 0:
                 return "%d miljoen" % q
 
+        # No friendly variant, just return the numerical representation.
         return unicode(n)
 
     # Code below completely spells out each number.
@@ -108,9 +112,3 @@ def cardinal(n, friendly=True):
 
 def ordinal(n):
     raise NotImplementedError("Ordinal numbers not yet implemented")
-
-
-# Aliases
-
-hoofd = n = cardinal
-rang = nth = ordinal
