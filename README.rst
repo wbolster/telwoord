@@ -51,19 +51,14 @@ guides::
 Grammatical and spelling rules
 ==============================
 
-`Aaneenschrijven van telwoorden <http://woordenlijst.org/leidraad/6/9/>`_:
+* Taalunie, `Aaneenschrijven van telwoorden
+  <http://woordenlijst.org/leidraad/6/9/>`_
 
-* "We schrijven een getal in één woord, tot en met het woord duizend. Na het
-  woord duizend volgt een spatie. De woorden miljoen, miljard, biljoen enz.
-  schrijven we los."
+* Genootschap Onze Taal, `Getallen in letters of cijfers
+  <https://onzetaal.nl/taaladvies/advies/getallen-in-letters-of-cijfers>`_
 
-* "Rangtelwoorden in woorden worden op dezelfde manier geschreven."
-
-* "Een rangtelwoord dat we met een cijfer schrijven, gevolgd door e of door
-  ste/de, krijgt geen apostrof."
-
-* "De teller en de noemer van een breuk schrijven we los, behalve als die deel
-  uitmaakt van een meerledige samenstelling."
+* Genootschap Onze Taal, `Getallen uitschrijven
+  <https://onzetaal.nl/taaladvies/advies/getallen-uitschrijven>`_
 
 
 Possible future work
