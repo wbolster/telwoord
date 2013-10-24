@@ -1,8 +1,7 @@
 # coding: UTF-8
 
 """
-Convert numerals into their Dutch written form.
-
+Convert numbers into their Dutch written form.
 """
 
 from __future__ import unicode_literals

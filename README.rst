@@ -1,7 +1,7 @@
 Telwoord
 ========
 
-A Python library to convert numerals into their Dutch written form.
+A Python library to convert numbers into their Dutch written form.
 
 
 Installation
