@@ -31,6 +31,9 @@ def test_cardinal():
         2000000: "twee miljoen",
         300000000: "driehonderd miljoen",
         300012013: "driehonderd miljoen twaalfduizend dertien",
+        1000000000: "een miljard",
+        12345678901: "twaalf miljard driehonderdvijfenveertig miljoen "
+                     "zeshonderdachtenzeventigduizend negenhonderdeen",
 
         # From http://woordenlijst.org/leidraad/6/9/
         2: "twee",

@@ -25,6 +25,7 @@ TENS = [
 
 MILLION = 10 ** 6
 BILLION = 10 ** 9
+TRILLION = 10 ** 12
 
 
 def cardinal(n, friendly=True):
@@ -105,6 +106,12 @@ def cardinal(n, friendly=True):
         a = cardinal(q, friendly=False)
         b = " " + cardinal(r, friendly=False) if r > 0 else ""
         return a + " miljoen" + b
+
+    if n < TRILLION:
+        q, r = divmod(n, BILLION)
+        a = cardinal(q, friendly=False)
+        b = " " + cardinal(r, friendly=False) if r > 0 else ""
+        return a + " miljard" + b
 
     # Fallback to numerical representation
     return unicode(n)
