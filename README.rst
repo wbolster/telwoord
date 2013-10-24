@@ -3,6 +3,8 @@ Telwoord
 
 A Python library to convert numbers into their Dutch (nl) written form.
 
+URL: https://github.com/wbolster/telwoord
+
 
 Installation
 ============
