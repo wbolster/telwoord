@@ -7,6 +7,11 @@ Convert numerals into their Dutch written form.
 
 from __future__ import unicode_literals
 
+try:
+    unicode
+except NameError:
+    # Python 3
+    unicode = str
 
 UNITS = [
     "nul", "een", "twee", "drie", "vier", "vijf", "zes", "zeven",
@@ -18,7 +23,11 @@ TENS = [
     "zeventig", "tachtig", "negentig"]
 
 
-def cardinal(n):
+def cardinal(n, threshold=None):
+
+    if threshold is not None and abs(n) >= threshold:
+        return unicode(n)
+
     if n < 0:
         return "min " + cardinal(abs(n))
 

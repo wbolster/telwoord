@@ -13,7 +13,8 @@ This is a work in progress and should be considered alpha quality software.
 Usage
 =====
 
-::
+Convert an integer to a (Unicode) string using the ``telwoord.cardinal()``
+function::
 
     from telwoord import cardinal
 
@@ -23,9 +24,14 @@ Usage
     for n in (1, 22, 2200, 2220, 0, -12):
         print(cardinal(n))
 
+You can specify an optional `threshold` argument, as required by some style
+guides::
 
-Rules
-=====
+    cardinal(n, threshold=7)  # returns "13", not "dertien"
+
+
+Grammatical and spelling rules
+==============================
 
 `Aaneenschrijven van telwoorden <http://woordenlijst.org/leidraad/6/9/>`_:
 

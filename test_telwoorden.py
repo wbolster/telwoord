@@ -1,8 +1,11 @@
+# coding: UTF-8
+
+from __future__ import unicode_literals
 
 import telwoord
 
 
-def test_telwoorden():
+def test_cardinal():
 
     inputs = {
         # Normal numbers
@@ -25,3 +28,11 @@ def test_telwoorden():
 
     for n, w in inputs.items():
         assert telwoord.cardinal(n) == w
+
+
+def test_threshold():
+    assert telwoord.cardinal(5, threshold=7) == "vijf"
+    assert telwoord.cardinal(5, threshold=3) == "5"
+
+    assert telwoord.cardinal(-5, threshold=7) == "min vijf"
+    assert telwoord.cardinal(-5, threshold=3) == "-5"
