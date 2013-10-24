@@ -4,6 +4,24 @@ Telwoord
 A Python library to convert numerals into their Dutch written form.
 
 
+Installation
+============
+
+To install from a source tree::
+
+    $ pip install -e .
+
+Eventually this will become::
+
+    $ pip install telwoord
+
+
+Dependencies
+============
+
+No dependencies; a Python 2 or Python 3 interpreter is all you need.
+
+
 Development status
 ==================
 
@@ -54,3 +72,11 @@ Possible future work
 * Ordinal numbers
 
 * Fractions
+
+
+Development
+===========
+
+To run the tests::
+
+    $ py.test
