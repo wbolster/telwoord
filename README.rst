@@ -1,5 +1,5 @@
-Telwoorden
-==========
+Telwoord
+========
 
 A Python library to convert numerals into their Dutch written form.
 
@@ -27,7 +27,7 @@ Usage
 Rules
 =====
 
-`Aaneenschrijven van telwoorden <http://woordenlijst.org/leidraad/6/9/>`:
+`Aaneenschrijven van telwoorden <http://woordenlijst.org/leidraad/6/9/>`_:
 
 * "We schrijven een getal in één woord, tot en met het woord duizend. Na het
   woord duizend volgt een spatie. De woorden miljoen, miljard, biljoen enz.
@@ -47,4 +47,4 @@ Possible future work
 
 * Ordinal numbers
 
-* Fraction
+* Fractions
