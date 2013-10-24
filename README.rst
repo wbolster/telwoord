@@ -3,6 +3,13 @@ Telwoorden
 
 A Python library to convert numerals into their Dutch written form.
 
+
+Development status
+==================
+
+This is a work in progress and should be considered alpha quality software.
+
+
 Usage
 =====
 
