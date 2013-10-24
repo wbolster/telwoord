@@ -31,17 +31,23 @@ def cardinal(n, threshold=None):
     if n < 0:
         return "min " + cardinal(abs(n))
 
-    if n <= 19:
+    if n < 20:
         return UNITS[n]
 
-    if n <= 100:
-        a, b = divmod(n, 10)
-        t = TENS[int(n / 10)]
-        if b == 0:
-            return t
-        u = cardinal(b)
-        joiner = "en" if not u.endswith("e") else "ën"
-        return u + joiner + t
+    if n < 100:
+        q, r = divmod(n, 10)
+        a = TENS[q]
+        if r == 0:
+            return a
+        b = cardinal(r)
+        joiner = "en" if not b.endswith("e") else "ën"
+        return b + joiner + a
+
+    if n < 1000:
+        q, r = divmod(n, 100)
+        a = cardinal(q) if q > 1 else ""
+        b = cardinal(r) if r > 0 else ""
+        return a + "honderd" + b
 
     raise NotImplementedError("Don't know how to convert %d" % n)
 

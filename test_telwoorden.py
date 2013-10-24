@@ -14,8 +14,11 @@ def test_cardinal():
         2: "twee",
         20: "twintig",
         22: "tweeëntwintig",
-        # 200: "tweehonderd",
-        # 222: "tweehonderdtweeëntwintig",
+        100: "honderd",
+        200: "tweehonderd",
+        222: "tweehonderdtweeëntwintig",
+        999: "negenhonderdnegenennegentig",
+        # 1000: "duizend",
         # 2200: "tweeëntwintighonderd",
         # 2220: "tweeduizend tweehonderdtwintig",
         # 2220222: "twee miljoen tweehonderdtwintigduizend "
