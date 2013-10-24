@@ -2,7 +2,7 @@
 
 from __future__ import unicode_literals
 
-import telwoord
+from telwoord import cardinal
 
 
 def test_cardinal():
@@ -20,6 +20,8 @@ def test_cardinal():
         200: "tweehonderd",
         999: "negenhonderdnegenennegentig",
         1000: "duizend",
+        2000: "tweeduizend",
+        6000: "zesduizend",
         12001: "twaalfduizend een",
         99900: "negenennegentigduizend negenhonderd",
         99999: "negenennegentigduizend negenhonderdnegenennegentig",
@@ -54,12 +56,36 @@ def test_cardinal():
     }
 
     for n, w in inputs.items():
-        assert telwoord.cardinal(n) == w
+        assert cardinal(n, friendly=False) == w
 
 
-def test_threshold():
-    assert telwoord.cardinal(5, threshold=7) == "vijf"
-    assert telwoord.cardinal(5, threshold=3) == "5"
+def test_friendly_cardinals():
+    inputs = {
+        0: "nul",
+        1: "een",
+        19: "negentien",
+        20: "twintig",
+        50: "vijftig",
+        100: "honderd",
+        101: "101",
+        300: "driehonderd",
+        301: "301",
+        900: "negenhonderd",
+        6000: "zesduizend",
+        10000: "tienduizend",
+        10010: "10010",
+        11000: "elfduizend",
+        11011: "11011",
+        12000: "12 duizend",
+        12001: "12001",
+        13000: "13 duizend",
+        100000: "100 duizend",
+        10000000: "10 miljoen",
 
-    assert telwoord.cardinal(-5, threshold=7) == "min vijf"
-    assert telwoord.cardinal(-5, threshold=3) == "-5"
+        # Negative numbers
+        # -12: "min twaalf",
+        # -312: "-312",
+    }
+
+    for n, w in inputs.items():
+        assert cardinal(n) == w
