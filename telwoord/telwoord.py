@@ -2,8 +2,6 @@
 
 from __future__ import unicode_literals
 
-__all__ = ['cardinal']
-
 try:
     unicode
 except NameError:
