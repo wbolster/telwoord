@@ -6,7 +6,7 @@ setup(
     version='0.2dev',
     author="Wouter Bolsterlee",
     author_email="uws@xs4all.nl",
-    py_modules=['telwoord'],
+    packages=['telwoord'],
     url='https://github.com/wbolster/telwoord',
     license="BSD",
     classifiers=[

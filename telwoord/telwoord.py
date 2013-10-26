@@ -1,9 +1,5 @@
 # coding: UTF-8
 
-"""
-Convert numbers into their Dutch written form.
-"""
-
 from __future__ import unicode_literals
 
 __all__ = ['cardinal']
