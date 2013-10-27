@@ -108,11 +108,11 @@ To run the tests you will need a few extra packages::
 
     $ pip install -r test-requirements.txt
 
-To run the test::
+To run the tests::
 
     $ py.test
 
-To test against multiple Python 2 and 3 versions::
+To test against multiple Python versions::
 
     $ tox
 
