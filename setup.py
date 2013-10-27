@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='telwoord',
     description="Convert numbers into their Dutch written form",
-    version='0.3',
+    version='0.4dev',
     author="Wouter Bolsterlee",
     author_email="uws@xs4all.nl",
     packages=['telwoord'],
