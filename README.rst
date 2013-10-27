@@ -84,6 +84,19 @@ Spelling rules and style recommendations
   <https://onzetaal.nl/taaladvies/advies/getallen-uitschrijven>`_
 
 
+Version history
+===============
+
+* 0.2
+
+  * Improved support for friendly representation of negative numbers
+
+* 0.1
+
+  * Initial release
+  * Support for spelling out numbers, optionally in a friendly way
+
+
 Development
 ===========
 
