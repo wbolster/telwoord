@@ -2,7 +2,7 @@
 
 from __future__ import unicode_literals
 
-from telwoord import cardinal
+from telwoord import cardinal, ordinal
 
 
 def test_cardinal():
@@ -95,3 +95,68 @@ def test_friendly_cardinals():
 
     for n, w in inputs.items():
         assert cardinal(n) == w
+
+
+def test_ordinals():
+    inputs = {
+        0: "nulde",
+        1: "eerste",
+        2: "tweede",
+        3: "derde",
+        4: "vierde",
+        5: "vijfde",
+        6: "zesde",
+        7: "zevende",
+        8: "achtste",
+        9: "negende",
+        10: "tiende",
+        11: "elfde",
+        12: "twaalfde",
+        13: "dertiende",
+        14: "veertiende",
+        15: "vijftiende",
+        16: "zestiende",
+        17: "zeventiende",
+        18: "achttiende",
+        19: "negentiende",
+        20: "twintigste",
+        21: "eenentwintigste",
+        30: "dertigste",
+        50: "vijftigste",
+        100: "honderdste",
+        101: "honderdeerste",
+        300: "driehonderdste",
+        1000: "duizendste",
+        1001: "duizend eerste",
+        1012: "duizend twaalfde",
+        1000000: "een miljoenste",
+        2000000: "twee miljoenste",
+        1000000000: "een miljardste",
+
+        # Negative numbers
+        -1: "min eerste",
+        -12: "min twaalfde",
+    }
+
+    for n, w in inputs.items():
+        assert ordinal(n, friendly=False) == w
+
+
+def test_friendly_ordinals():
+    inputs = {
+        0: "nulde",
+        1: "eerste",
+        100: "honderdste",
+        4000: "vierduizendste",
+        301: "301e",
+        1000: "duizendste",
+        43000: "43 duizendste",
+        10000000: "10 miljoenste",
+
+        # Negative numbers
+        -12: "min twaalfde",
+        -312: "-312e",
+    }
+
+    for n, w in inputs.items():
+        assert ordinal(n) == w

@@ -2,6 +2,8 @@
 
 from __future__ import unicode_literals
 
+import re
+
 try:
     unicode
 except NameError:
@@ -22,9 +24,15 @@ BILLION = 10 ** 9
 TRILLION = 10 ** 12
 QUADRILLION = 10 ** 15
 
+# Regex for numbers that should get a "-de" suffix in their ordinal form
+RE_ORDINAL_SUFFIX_DE = re.compile(
+    '(?:nul|twee|vier|vijf|zes|zeven|negen|tien|elf|twaalf)$')
+
 
 def cardinal(n, friendly=True):
-    """Convert a number into its Dutch written form.
+    """Convert a number into its Dutch written form for cardinal numerals.
+
+    This function converts 1 into "een", 2 into "twee", and so on.
 
     If `friendly` is `True` (the default), this function uses various
     heuristics for "human friendly" results.
@@ -120,5 +128,32 @@ def cardinal(n, friendly=True):
     return unicode(n)
 
 
-def ordinal(n):
-    raise NotImplementedError("Ordinal numbers not yet implemented")
+def ordinal(n, friendly=True):
+    """Convert a number into its Dutch written form for ordinal numerals.
+
+    This function converts 1 into "eerste", 2 into "tweede", and so on.
+
+    See the ``cardinal()`` function for a description of the
+    ``friendly`` argument.
+    """
+
+    c = cardinal(n, friendly=friendly)
+
+    if c == unicode(n):
+        # No words at all. Add -e suffix, e.g. "123e"
+        return c + 'e'
+
+    # Special case for "eerste"
+    if c.endswith('een'):
+        return c[:-1] + 'rste'
+
+    # Special case for "derde"
+    if c.endswith('drie'):
+        return c[:-3] + 'erde'
+
+    # Several numbers: "-de"
+    if RE_ORDINAL_SUFFIX_DE.search(c):
+        return c + "de"
+
+    # Everything else: "-ste"
+    return c + 'ste'

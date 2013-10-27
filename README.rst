@@ -70,6 +70,32 @@ To forcibly spell out all the numbers, pass ``friendly=False``::
        1000000   een miljoen
       12345678   twaalf miljoen driehonderdvijfenveertigduizend zeshonderdachtenzeventig
 
+In addition to cardinal numbers, you can also convert a number into its ordinal
+string representation using ``telwoord.ordinal()``::
+
+    >>> from telwoord import ordinal
+
+    >>> for n in numbers: print("{0: 10d}   {1}".format(n, ordinal(n)))
+             0   nulde
+             1   eerste
+             2   tweede
+             3   derde
+            19   negentiende
+            20   twintigste
+            30   dertigste
+            31   31e
+           100   honderdste
+           200   tweehonderdste
+           215   215e
+           300   driehonderdste
+         14999   14999e
+         15000   15 duizendste
+       1000000   1 miljoenste
+      12345678   12345678e
+
+The ``telwoord.ordinal()`` function also takes a ``friendly`` argument that
+works the same way as for ``telwoord.cardinal()``.
+
 
 Spelling rules and style recommendations
 ========================================
@@ -118,5 +144,4 @@ To test against multiple Python versions::
 
 Possible future work:
 
-* Ordinal numbers
-* Fractions
+* Fractions, e.g. "tweederde", "twaalf tachtigste"
