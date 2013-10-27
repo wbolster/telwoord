@@ -34,24 +34,26 @@ def cardinal(n, friendly=True):
     numbers.
     """
     if friendly:
-        if n < 20:
+        n_abs = abs(n)
+
+        if n_abs < 20:
             return cardinal(n, friendly=False)
 
-        if n < 100 and n % 10 == 0:
+        if n_abs < 100 and n_abs % 10 == 0:
             return cardinal(n, friendly=False)
 
-        if n < 1000 and n % 100 == 0:
+        if n_abs < 1000 and n_abs % 100 == 0:
             return cardinal(n, friendly=False)
 
-        if n < 12000 and n % 1000 == 0:
+        if n_abs < 12000 and n_abs % 1000 == 0:
             return cardinal(n, friendly=False)
 
-        if n < MILLION:
+        if n_abs < MILLION:
             q, r = divmod(n, 1000)
             if r == 0:
                 return "%d duizend" % q
 
-        if n < BILLION:
+        if n_abs < BILLION:
             q, r = divmod(n, MILLION)
             if r == 0:
                 return "%d miljoen" % q

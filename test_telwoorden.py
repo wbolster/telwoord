@@ -89,8 +89,8 @@ def test_friendly_cardinals():
         10000000: "10 miljoen",
 
         # Negative numbers
-        # -12: "min twaalf",
-        # -312: "-312",
+        -12: "min twaalf",
+        -312: "-312",
     }
 
     for n, w in inputs.items():
