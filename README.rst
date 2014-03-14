@@ -3,7 +3,8 @@ Telwoord
 
 A Python library to convert numbers into their Dutch (nl) written form.
 
-.. image:: https://travis-ci.org/wbolster/telwoord.png?branch=master   :target: https://travis-ci.org/wbolster/telwoord
+.. image:: https://travis-ci.org/wbolster/telwoord.png?branch=master
+   :target: https://travis-ci.org/wbolster/telwoord
 
 Links:
 
