@@ -66,6 +66,9 @@ def custom_sorted(d):
         # Negative numbers
         -1: "min een",
         -10: "min tien",
+        -2000: "min tweeduizend",
+        -100000: "min 100 duizend",
+        -20000000: "min 20 miljoen",
     }))
 def test_cardinal(number, expected):
     actual = cardinal(number, friendly=False)
@@ -99,6 +102,10 @@ def test_cardinal(number, expected):
         # Negative numbers
         -12: "min twaalf",
         -312: "-312",
+        -2000: "min tweeduizend",
+        -100000: "min 100 duizend",
+        -20000000: "min 20 miljoen",
+        -20000001: "-20000001",
     }))
 def test_friendly_cardinals(number, expected):
     actual = cardinal(number)

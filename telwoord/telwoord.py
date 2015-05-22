@@ -56,15 +56,17 @@ def cardinal(n, friendly=True):
         if n_abs < 12000 and n_abs % 1000 == 0:
             return cardinal(n, friendly=False)
 
+        prefix = "min " if n < 0 else ""
+
         if n_abs < MILLION:
-            q, r = divmod(n, 1000)
+            q, r = divmod(n_abs, 1000)
             if r == 0:
-                return "%d duizend" % q
+                return prefix + "%d duizend" % q
 
         if n_abs < BILLION:
-            q, r = divmod(n, MILLION)
+            q, r = divmod(n_abs, MILLION)
             if r == 0:
-                return "%d miljoen" % q
+                return prefix + "%d miljoen" % q
 
         # No friendly variant, just return the numerical representation.
         return unicode(n)
