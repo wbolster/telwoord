@@ -2,4 +2,5 @@
 Convert numbers into their Dutch written form.
 """
 
-from .telwoord import cardinal, ordinal
+# Import public API
+from .telwoord import cardinal, ordinal  # noqa: unused imports
