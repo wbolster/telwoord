@@ -7,9 +7,14 @@ import pytest
 from telwoord import cardinal, ordinal
 
 
+def custom_sorted(d):
+    """Order by increasing values, with negative numbers coming last"""
+    return sorted(d.items(), key=lambda x: (x[0] <= 0, abs(x[0])))
+
+
 @pytest.mark.parametrize(
     ('number', 'expected'),
-    sorted({
+    custom_sorted({
         # Normal numbers
         0: "nul",
         1: "een",
@@ -61,7 +66,7 @@ from telwoord import cardinal, ordinal
         # Negative numbers
         -1: "min een",
         -10: "min tien",
-    }.items()))
+    }))
 def test_cardinal(number, expected):
     actual = cardinal(number, friendly=False)
     assert actual == expected
@@ -69,7 +74,7 @@ def test_cardinal(number, expected):
 
 @pytest.mark.parametrize(
     ('number', 'expected'),
-    sorted({
+    custom_sorted({
         0: "nul",
         1: "een",
         19: "negentien",
@@ -94,7 +99,7 @@ def test_cardinal(number, expected):
         # Negative numbers
         -12: "min twaalf",
         -312: "-312",
-    }.items()))
+    }))
 def test_friendly_cardinals(number, expected):
     actual = cardinal(number)
     assert actual == expected
@@ -102,7 +107,7 @@ def test_friendly_cardinals(number, expected):
 
 @pytest.mark.parametrize(
     ('number', 'expected'),
-    sorted({
+    custom_sorted({
         0: "nulde",
         1: "eerste",
         2: "tweede",
@@ -140,7 +145,7 @@ def test_friendly_cardinals(number, expected):
         # Negative numbers
         -1: "min eerste",
         -12: "min twaalfde",
-    }.items()))
+    }))
 def test_ordinals(number, expected):
     actual = ordinal(number, friendly=False)
     assert actual == expected
@@ -148,7 +153,7 @@ def test_ordinals(number, expected):
 
 @pytest.mark.parametrize(
     ('number', 'expected'),
-    sorted({
+    custom_sorted({
         0: "nulde",
         1: "eerste",
         100: "honderdste",
@@ -161,7 +166,7 @@ def test_ordinals(number, expected):
         # Negative numbers
         -12: "min twaalfde",
         -312: "-312e",
-    }.items()))
+    }))
 def test_friendly_ordinals(number, expected):
     actual = ordinal(number)
     assert actual == expected
