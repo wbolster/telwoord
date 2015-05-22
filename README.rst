@@ -116,6 +116,10 @@ Spelling rules and style recommendations
 Version history
 ===============
 
+* 0.4
+
+  * Improved friendly representation for some negative numbers
+
 * 0.3
 
   * Implemented support for ordinal numbers
