@@ -21,7 +21,7 @@ def custom_sorted(d):
         11: "elf",
         19: "negentien",
         20: "twintig",
-        23: "eenentwintig",
+        21: "eenentwintig",
         23: "drieëntwintig",
         100: "honderd",
         200: "tweehonderd",
